@@ -1,0 +1,95 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+/*HearNavbaroki*/
+.navbar a{
+    font-size: 30px;
+    font-family: sans-serif;
+}
+.navbar {
+    height: 60px;
+    z-index: 1040;
+    background-color: #ffd446 !important;
+}
+.navbar-brand{
+    margin-left: 60px;
+}
+/*Slidemenu*/
+.sidebar {
+    background-color: #f8f9fa;
+    padding-top: 10px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+.sidebar.collapsed {
+    width: 1px;
+}
+.nav-pills {
+    flex-direction: column;
+    border-right: 1px solid #dee2e6;
+    width: 220px;
+    position: fixed;
+    top: 60px;
+    bottom: 0;
+    left: 0;
+    padding-top: 10px;
+    background-color: #f8f9fa;
+    transition: transform 0.2s ease;
+
+}
+.nav-pills.collapsed {
+    transform: translateX(-220px);
+}
+.nav-pills .nav-link {
+    color: darkslategrey;
+}
+.nav-pills .nav-link.active {
+    background-color: #ffd446;
+    color: #ffffff;
+}
+.nav-pills .nav-link:hover {
+    background-color: #f8db7a;
+    color: #ffffff;
+}
+
+.sidebar-toggler {
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    z-index: 1050;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    outline: none; 
+}
+
+.sidebar-toggler:hover {
+    color: #000000;
+    background: none;
+}
+
+.sidebar-toggler:focus,
+.sidebar-toggler:active {
+    color: #ffffff; 
+    background: none !important; /*!important to force the changes in bootstarp*/
+    outline: none !important;
+    box-shadow: none !important; 
+}
+/*Content*/
+.content {
+    margin-top: 60px; 
+    margin-left: 220px; 
+    padding: 15px;
+    transition: margin-left 0.3s ease;
+}
+.content.collapsed {
+    margin-left: 1px;
+}
+
+
