@@ -9,23 +9,37 @@
         crossorigin="anonymous">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+    </style>
+      
+        
 </head>
 <body>
     <!-- Header -->
     <nav class="navbar fixed-top navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="btn btn-primary sidebar-toggler" id="sidebarToggle">
-                <i class='bx bx-menu' id="sidebarIcon"></i>
+        <div class="container-fluid d-flex align-items-center">
+          <button class="btn btn-primary icon-button" id="sidebarToggle">
+            <i class='bx bx-menu' id="sidebarIcon"></i>
+          </button>
+          <a class="navbar-brand " href="#">ENY Printing Shop</a>
+          <div class="ml-auto d-flex">
+            <button class="btn icon-button" id="calendarBtn">
+              <i class="bx bx-calendar"></i>
             </button>
-            <a class="navbar-brand" href="#">ENY Printing Shop </a>
+            <button class="btn icon-button" id="notification">
+              <i class="bx bx-bell"></i>
+            </button>
+          </div>
         </div>
-    </nav>
+      </nav>
 
     <!-- Sidebar -->
-    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-        <div class="sidebar-header p-3 mb-2">
+    <div class="nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <div class="sidebar-header p-1 mb-4">
             <div class="admin-profile">
-                <img src="enyLogo.png" alt="Admin" class="img-fluid rounded-circle mb-2">
+                <img src="enyLogo.png" alt="Admin" class="img-fluid rounded-circle mb-3">
                 <div class="admin-info">
                     <h5 class="admin-name" >ENY Admin</h5>
                 </div>
@@ -34,6 +48,16 @@
         <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Dashboard</button>
         <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Inventory</button>
         <button class="nav-link" id="v-pills-orders-tab" data-bs-toggle="pill" data-bs-target="#v-pills-orders" type="button" role="tab" aria-controls="v-pills-orders" aria-selected="false">Orders</button>
+        
+      <!-- Products button with collapsible content -->
+        <button class="nav-link d-flex justify-content-between align-items-center" id="v-pills-products-tab" type="button" data-bs-toggle="collapse" data-bs-target="#v-products-collapse" aria-expanded="false" aria-controls="v-products-collapse">
+            Products
+            <i class='bx bx-chevron-down' id="collapseMenu"></i>
+        </button>
+        <div class="collapse" id="v-products-collapse">
+            <a class="nav-link ms-3" id="v-pills-product-category1-tab" data-bs-toggle="pill" data-bs-target="#v-pills-product-category1" role="tab" aria-controls="v-pills-product-category1" aria-selected="false">Shirts</a>
+            <a class="nav-link ms-3" id="v-pills-product-category2-tab" data-bs-toggle="pill" data-bs-target="#v-pills-product-category2" role="tab" aria-controls="v-pills-product-category2" aria-selected="false">Totebag</a>
+        </div>
         <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
         <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
     </div>
@@ -41,9 +65,73 @@
     <!-- Content -->
     <div class="content" id="content">
         <div class="tab-content" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">Dashboard Content</div>
+            <!-- dashboard -->
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 my-3">
+                    <div class="card-list d-flex flex wrap">
+                      <div class="row flex-fill">
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4 d-flex">
+                          <div class="card sales flex-fill">
+                            <div class="title">Sales</div>
+                            <i class = 'bx bx-line-chart'></i>
+                            <div class="value">&#8369; Sample Sales Number</div>
+                            <div class="stat"><b>Ipsum</b>Dolor</div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4 d-flex">
+                          <div class="card orders flex-fill">
+                            <div class="title">Orders</div>
+                            <i class='bx bx-cart'></i>
+                            <div class="value">Sample Order Numbers</div>
+                            <div class="stat"><b>Ipsum</b>Dolor</div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-4 d-flex">
+                            <div class="card orders flex-fill">
+                              <div class="title">Clients</div>
+                              <i class='bx bx-user'></i>
+                              <div class="value">Number of Clients That has order</div>
+                            </div>
+                          </div>
+                        <main class="orderTbl"> Recent Order
+                          <table> 
+                            <tr>
+                              <th>Date</th>
+                              <th>Order No.</th>
+                              <th>Name</th>
+                              <th>Order Status</th>
+                            </tr>
+                            <tr>
+                              <td>Data 1 Date</td>
+                              <td>Data 2 Order no</td>
+                              <td>Data 3Name</td>
+                              <td>
+                                <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                 Status
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">Pending</a></li>
+                                  <li><a class="dropdown-item" href="#">Paid</a></li>
+                                  <li><a class="dropdown-item" href="#">Processing</a></li>
+                                </ul>
+                              </div>
+                            </td>
+                            </tr>
+                          </table>
+                        </main>
+                      </div>
+                    </div>
+                  </main>
+            </div>
+            <!-- end of dash -->
             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Inventory Content</div>
             <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">Orders Content</div>
+            <div class="tab-pane fade" id="v-pills-products" role="tabpanel" aria-labelledby="v-pills-products-tab">Products Content</div>
+            <!---Products drop---->
+            <div class="tab-pane fade" id="v-pills-product-category1" role="tabpanel" aria-labelledby="v-pills-product-category1">Category 1 Shirts</div>
+            <div class="tab-pane fade" id="v-pills-product-category2" role="tabpanel" aria-labelledby="v-pills-product-category2">Category 2 Totebag</div>
+             <!---Products drop---->
             <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Messages Content</div>
             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Settings Content</div>
         </div>
@@ -52,7 +140,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
         crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" 
+         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="adminscrip.js"></script>
 </body>
+
 </html>

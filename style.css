@@ -1,19 +1,48 @@
+/* primary color - ffd446 */
 body, html {
     height: 100%;
     margin: 0;
 }
 /*HearNavbaroki*/
-.navbar a{
-    font-size: 30px;
-    font-family: sans-serif;
-}
 .navbar {
     height: 60px;
     z-index: 1040;
     background-color: #ffd446 !important;
 }
-.navbar-brand{
-    margin-left: 60px;
+.navbar-brand {
+    margin-left: 10px;
+    font-size: 30px;
+    font-family: Rubik;
+    font-weight: bold;
+    color:#2b2e30;
+    
+}
+.ml-auto {
+    margin-left: auto !important;
+  }
+/*header icons*/
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    outline: none; 
+}
+
+.icon-button:hover {
+    color: #000000;
+    background: none;
+}
+
+.icon-button:focus,
+.icon-button:active {
+    color: #ffffff; 
+    background: none !important; /*!important to force the changes in bootstarp*/
+    outline: none !important;
+    box-shadow: none !important; 
 }
 /*Slidemenu*/
 .sidebar {
@@ -32,7 +61,7 @@ body, html {
 .nav-pills {
     flex-direction: column;
     border-right: 1px solid #dee2e6;
-    width: 220px;
+    width: 200px;
     position: fixed;
     top: 60px;
     bottom: 0;
@@ -47,39 +76,34 @@ body, html {
 }
 .nav-pills .nav-link {
     color: darkslategrey;
+    text-align: left;
 }
 .nav-pills .nav-link.active {
     background-color: #ffd446;
     color: #ffffff;
+    font-size: larger;
+    font-weight: bolder;
 }
 .nav-pills .nav-link:hover {
     background-color: #f8db7a;
     color: #ffffff;
 }
 
-.sidebar-toggler {
-    position: absolute;
-    top: 5px;
-    left: 15px;
-    z-index: 1050;
-    background: none;
-    border: none;
+.admin-info{
+    margin-left:55px; 
+}
+/*Collapsing*/
+.nav-pills .collapse .nav-link {
+    background-color: #f8f9fa;
+    color: darkslategrey;
+}
+.nav-pills .collapse .nav-link:hover {
+    background-color: #f8db7a;
     color: #ffffff;
-    font-size: 30px;
-    outline: none; 
 }
-
-.sidebar-toggler:hover {
-    color: #000000;
-    background: none;
-}
-
-.sidebar-toggler:focus,
-.sidebar-toggler:active {
-    color: #ffffff; 
-    background: none !important; /*!important to force the changes in bootstarp*/
-    outline: none !important;
-    box-shadow: none !important; 
+.nav-pills .collapse .nav-link.active{
+    background-color: #ffd446;
+    color: #ffffff;
 }
 /*Content*/
 .content {
@@ -91,5 +115,56 @@ body, html {
 .content.collapsed {
     margin-left: 1px;
 }
-
-
+/* main content dash*/
+.card {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: end;
+    transition: transform 0.2ms ease;
+}
+.card .title{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.card i{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.card .value {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+  .card .stat {
+    font-size: 14px;
+    color: #6c757d;
+}
+.card:hover {
+    transform: translateY(-10px);
+}
+/* different widgets */
+.card.sales{
+    background-color: rgb(112, 169, 255);
+    
+}
+.card.orders{
+    background-color: #ffd446;
+}
+/* tables */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+ }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+  
+  tr:nth-child(even) {
+    background-color: #fff6b6; 
+}
